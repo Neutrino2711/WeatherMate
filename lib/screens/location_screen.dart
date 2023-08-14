@@ -67,10 +67,11 @@ class _LocationScreenState extends State<LocationScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Color.fromARGB(255, 66, 197, 255),
             gradient: LinearGradient(colors: [
               Color.fromARGB(255, 66, 197, 255),
@@ -105,7 +106,7 @@ class _LocationScreenState extends State<LocationScreen> {
                         updateUI(weatherData);
                         // print(weatherData[cityName]);
                       },
-                      child: Icon(
+                      child: const Icon(
                         Icons.near_me,
                         size: 50.0,
                         color: Color.fromARGB(255, 1, 0, 1),
@@ -114,6 +115,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     TextButton(
                       onPressed: () async {
                         var forecastData = await WeatherModel().getForecast(4);
+                        print(forecastData);
                         var typedName = await Navigator.push(context,
                             MaterialPageRoute(builder: (context) {
                           return CityScreen(
@@ -141,7 +143,7 @@ class _LocationScreenState extends State<LocationScreen> {
                       //   ])),
                       //   child: Text("Check"),
                       // )
-                      child: Icon(
+                      child: const Icon(
                         Icons.add_location_alt,
                         size: 50.0,
                         color: Color.fromARGB(255, 1, 0, 1),
@@ -173,7 +175,7 @@ class _LocationScreenState extends State<LocationScreen> {
                     style: kMessageTextStyle,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 70.0,
                 ),
                 card(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:clima_flutter/screens/loading_screen.dart';
+// import 'package:rename/rename.dart';
 
 void main() => runApp(MyApp());
 

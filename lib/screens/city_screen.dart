@@ -1,17 +1,18 @@
-import 'dart:ffi';
+// import 'dart:ffi';
 
 import 'package:clima_flutter/services/weather.dart';
 import 'package:flutter/material.dart';
 import 'package:clima_flutter/utilities/constants.dart';
-import 'package:clima_flutter/utilities/constants.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'card.dart';
+// import 'package:clima_flutter/utilities/constants.dart';
+// import 'package:google_fonts/google_fonts.dart';
+// import 'card.dart';
 import 'card2.dart';
-import 'package:clima_flutter/services/location.dart';
+// import 'package:clima_flutter/services/location.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 class CityScreen extends StatefulWidget {
   @override
-  CityScreen({this.locationForecast});
+  const CityScreen({this.locationForecast});
 
   final locationForecast;
 
@@ -59,7 +60,7 @@ class _CityScreenState extends State<CityScreen> {
 
   String? mon(String? s) {
     s = s?.substring(6, 7);
-    print(s);
+    // print(s);
     return month[(int.parse(s.toString())) - 1];
     // return month.length;
   }
@@ -106,10 +107,11 @@ class _CityScreenState extends State<CityScreen> {
     });
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
             color: Color.fromARGB(255, 255, 255, 67),
             gradient: LinearGradient(colors: [
               Color.fromARGB(255, 255, 255, 67),
@@ -130,7 +132,7 @@ class _CityScreenState extends State<CityScreen> {
                   onPressed: () {
                     Navigator.pop(context);
                   },
-                  child: Icon(
+                  child: const Icon(
                     Icons.arrow_circle_left,
                     color: Color.fromARGB(255, 1, 0, 1),
                     size: 35.0,
@@ -138,9 +140,9 @@ class _CityScreenState extends State<CityScreen> {
                 ),
               ),
               Container(
-                padding: EdgeInsets.all(10.0),
+                padding: const EdgeInsets.all(10.0),
                 child: TextField(
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Color.fromARGB(255, 255, 255, 67),
                     fontWeight: FontWeight.w500,
                   ),
@@ -154,18 +156,18 @@ class _CityScreenState extends State<CityScreen> {
                 onPressed: () {
                   Navigator.pop(context, cityName);
                 },
-                child: Text(
+                child: const Text(
                   'Get Weather',
                   style: kButtonTextStyle,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Text(
+                  const Text(
                     "Weather Forecast",
                     style: TextStyle(
                       color: Color.fromARGB(255, 1, 0, 1),
@@ -173,14 +175,20 @@ class _CityScreenState extends State<CityScreen> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  Icon(
-                    Icons.arrow_right_alt,
-                    size: 40.0,
-                    color: Color.fromARGB(255, 1, 0, 1),
+                  Animate(
+                    effects: [
+                      FadeEffect(),
+                      SlideEffect(),
+                    ],
+                    child: Icon(
+                      Icons.arrow_right_alt,
+                      size: 40.0,
+                      color: Color.fromARGB(255, 1, 0, 1),
+                    ),
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30.0,
               ),
               // TextButton(
@@ -194,7 +202,7 @@ class _CityScreenState extends State<CityScreen> {
               //       color: Color.fromARGB(255, 1, 0, 1),
               //     )),
               // forecast(temp: temp?[0], date: date?[0]),
-              Container(
+              SizedBox(
                   height: 200,
                   width: 350,
                   child: Row(

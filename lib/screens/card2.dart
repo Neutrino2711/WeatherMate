@@ -32,6 +32,14 @@ class forecast extends StatelessWidget {
     return Container(
       width: 75.0,
       height: 140.0,
+      decoration: BoxDecoration(
+        border: Border.all(
+          width: 3.0,
+          style: BorderStyle.solid,
+          color: Color.fromARGB(255, 1, 0, 1),
+        ),
+        borderRadius: BorderRadius.circular(15.0),
+      ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
@@ -40,14 +48,6 @@ class forecast extends StatelessWidget {
           Text(date.toString(), style: kforecastTextStyle),
           Text(month.toString(), style: kforecastTextStyle),
         ],
-      ),
-      decoration: BoxDecoration(
-        border: Border.all(
-          width: 3.0,
-          style: BorderStyle.solid,
-          color: Color.fromARGB(255, 1, 0, 1),
-        ),
-        borderRadius: BorderRadius.circular(15.0),
       ),
     );
   }

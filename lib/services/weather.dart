@@ -2,7 +2,7 @@
 
 import 'package:clima_flutter/services/location.dart';
 import 'package:clima_flutter/services/networking.dart  ';
-import 'package:clima_flutter/screens/loading_screen.dart';
+// import 'package:clima_flutter/screens/loading_screen.dart';
 import 'package:flutter/material.dart';
 
 const apiKey = "44a05e126b967298a571aa4cb44d682c";
@@ -30,8 +30,8 @@ class WeatherModel {
 
     var weatherData = await networkHelper.getData();
     // print("check");
-    print(weatherData);
-    print(weatherData['cnt']);
+    // print(weatherData);
+    // print(weatherData['cnt']);
     // print("check");
     return weatherData;
   }
@@ -70,14 +70,14 @@ class WeatherModel {
 
   Icon getIcon(double temp) {
     if (temp < 10.0) {
-      return Icon(Icons.snowing, color: Color.fromARGB(255, 1, 0, 1));
+      return const Icon(Icons.snowing, color: Color.fromARGB(255, 1, 0, 1));
     } else if (temp > 20.0) {
-      return Icon(
+      return const Icon(
         Icons.cloud_circle,
         color: Color.fromARGB(255, 1, 0, 1),
       );
     } else {
-      return Icon(
+      return const Icon(
         Icons.sunny,
         color: Color.fromARGB(255, 1, 0, 1),
       );
